@@ -33,6 +33,9 @@ class App extends Component {
 
   test() {
     let characters = this.state.characters
+    if (this.state.searchQuery === "") {
+      return <ul></ul>
+    }
     return (
       <ul>
         {characters.map(character => <li>{character.name}</li>)}

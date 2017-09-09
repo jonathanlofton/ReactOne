@@ -9,67 +9,47 @@ class App extends Component {
       searchQuery: '',
       characters: null,
     }
-    this.fetchResults = this.fetchResults.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-    this.test = this.test.bind(this);
+    this.fetchCharacters = this.fetchCharacters.bind(this);
+    this.characterResults = this.characterResults.bind(this);
   }
 
-  fetchResults(e) {
+  fetchCharacters(e) {
     this.setState({
       searchQuery: e.target.value
     })
-    fetch(`https://swapi.co/api/people/?search=${e.target.value}`).then(function(response) {
-     return response.json();
-   }).then((response) => {this.handleSearch(response.results)});
+
+    fetch(`https://swapi.co/api/people/?search=${e.target.value}`)
+    .then(response => { return response.json(); })
+    .then(response => {this.setState({ characters: response.results })})
+    .then(() => {this.characterResults});
   }
 
-  handleSearch(char) {
-    this.setState({
-      characters: char
-    })
-    console.log(this.state.characters)
-    this.test;
-  }
+  characterResults() {
+    let { characters, searchQuery } = this.state;
 
-  test() {
-    let characters = this.state.characters
-    if (this.state.searchQuery === "") {
+    if (searchQuery === "" || characters === null) {
       return <ul></ul>
     }
+
     return (
       <ul>
-        {characters.map(character => <li>{character.name}</li>)}
+        {characters.map((character, idx) => <li key={idx}>{character.name}</li>)}
       </ul>
     )
   }
 
-
   render() {
-    if (this.state.characters === null) {
-      return (
-        <div className="App">
-          <input
-            ref={(input) => { this.searchInput = input; }}
-            type={'text'}
-            onChange={this.fetchResults}
-            value={this.state.searchQuery}
-            placeholder={'search'}
-            >
-          </input>
-        </div>
-      )
-    }
     return (
       <div className="App">
         <input
           ref={(input) => { this.searchInput = input; }}
           type={'text'}
-          onChange={this.fetchResults}
+          onChange={this.fetchCharacters}
           value={this.state.searchQuery}
           placeholder={'search'}
           >
         </input>
-        {this.test()}
+        {this.characterResults()}
       </div>
     );
   }

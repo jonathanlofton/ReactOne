@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <h1>Phillips Hue Api</h1>
+
+        <button id='button'></button>
+
+        <script>
+            let button = document.getElementById('button')
+            console.log(button)
+
+            const tester = () => {
+                fetch('http://localhost/api/newdeveloper/lights/2')
+                .then( response => { return response.json() })
+                .then( res => jsonParser(res) )
+            }
+
+            const jsonParser = (json) => {
+                console.log(json)
+                deviceName = json.name
+                onOroff = json.state.on
+                brightness = json.state.bri
+                id = json.modelid 
+                console.log(`${deviceName}:${id}: is ${onOroff} and its brightness is ${brightness}`)
+            }
+
+            button.addEventListener('click', () => tester())
+        </script>
+    </body>
+</html>
+
+
+

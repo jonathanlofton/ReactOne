@@ -1,21 +1,13 @@
 require 'open-uri'
 require 'json'
 
-
-
 class LightState
 
     attr_reader :program
     
     def initialize()
         @program = true 
-        @light1 = nil
-    end 
-
-    def compareState(current, previous)
-        if current != previous 
-            p current
-        end 
+        @lights = {}
     end 
 
     def light_info(light)
@@ -24,10 +16,10 @@ class LightState
         hash[:on] = light["state"]["on"]
         hash[:brightness] = (light["state"]["bri"] / 2.54).round
         hash[:id] = light["modelid"]
-        p hash
+        @lights[hash[:name]] = hash
     end 
 
-    def print_all_lights()
+    def fetch_all_lights()
         light = open("http://localhost/api/newdeveloper").read
         result = JSON.parse(light)
         
@@ -38,43 +30,51 @@ class LightState
             i += 1
         end 
     end 
-    
-    def allLights(previous_result = nil) 
 
-        current_light_state = {}
-        previous_light_state = {}
+    def changes_to_light(current_light, previous_light)
+        brightness, on = {}
+        return if previous_light == nil 
+        if current_light[:on] != previous_light[:on]
+            hash["name"] = current_light[:name]
+            hash["on"] = current_light[:on]
+            p hash
+        end 
+        if current_light[:brightness] != previous_light[:brightness]
+            brightness["name"] = current_light[:name]
+            brightness["brightness"] = current_light[:brightness]
+            p brightness
+        end 
+    end 
+
+    
+    def updated_light_info() 
+        previous_light = {}
+        
         loop do 
             sleep(1)
-            light = open("http://localhost/api/newdeveloper/lights/2").read
-            result = JSON.parse(light)
-            current_light_state[:on] = result["state"]["on"]
-            current_light_state[:brightness] = result["state"]["bri"]
-            current_light_state[:id] = result["modelid"]
-            # name[:name] = result["name"]
+            fetch_all_lights
+            @lights.values.each do |light|
 
-
-            if current_light_state[:on] != previous_light_state[:on] 
-                p current_light_state[:on]
+                if light != previous_light[light[:name]]
+                    changes_to_light(light, previous_light[light[:name]])
+                end 
+                previous_light[light[:name]] = light
             end 
-            compareState(current_light_state[:brightness], previous_light_state[:brightness])
 
-            previous_light_state[:on] = current_light_state[:on]
-            previous_light_state[:brightness] = current_light_state[:brightness]
-            previous_light_state[:id] = current_light_state[:id]
         end 
     end 
 
     
 
     def run 
-        # print all lights when program starts
-        # on / off, brightness, name, ID
-        self.print_all_lights
+        # fetch and print all lights
+        self.fetch_all_lights
+        p @lights
 
         # If light state changes it should print again
         while self.program
             sleep(3)
-            self.allLights
+            self.updated_light_info
         end 
     end 
 end 

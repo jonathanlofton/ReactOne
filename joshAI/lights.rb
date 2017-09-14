@@ -7,6 +7,7 @@ class LightState
     
     def initialize()
         @lights = {}
+        @user_account = "newdeveloper"
     end 
 
     def light_info(light)
@@ -19,7 +20,8 @@ class LightState
     end 
 
     def fetch_all_lights()
-        light = open("http://localhost/api/newdeveloper").read
+        url = "http://localhost/api/#{@user_account}"
+        light = open(url).read
         fetched_lights = JSON.parse(light)
         
         i = 1
@@ -78,9 +80,12 @@ class LightState
 
     def run 
         # fetch and print all lights
+        p "(defaults to 'newdeveloper') what is your Phillips Hues user name? "
+        account = gets.strip
+        @user_account = gets.strip unless account == ""
         self.fetch_all_lights
         p @lights
-
+        
         # loop and listen for changes
         self.listen_for_changes
     end 

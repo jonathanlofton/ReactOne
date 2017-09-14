@@ -3,10 +3,9 @@ require 'json'
 
 class LightState
 
-    attr_reader :program
+    attr_reader :lights
     
     def initialize()
-        @program = true 
         @lights = {}
     end 
 
@@ -21,23 +20,30 @@ class LightState
 
     def fetch_all_lights()
         light = open("http://localhost/api/newdeveloper").read
-        result = JSON.parse(light)
+        fetched_lights = JSON.parse(light)
         
         i = 1
+        # loops through the fetched_lights 
+        # and adds them to the state until 
+        # there are none left
         loop do  
-            light = result["lights"][i.to_s]
+            light = fetched_lights["lights"][i.to_s]
             light == nil ? break : light_info(light)
             i += 1
         end 
     end 
 
+    # will see what changes to the light happened specifically 
+    # and print out the name of the light and the attribute 
+    # that had changed
     def changes_to_light(current_light, previous_light)
-        brightness, on = {}
+        brightness = {}
+        on = {}
         return if previous_light == nil 
         if current_light[:on] != previous_light[:on]
-            hash["name"] = current_light[:name]
-            hash["on"] = current_light[:on]
-            p hash
+            on["name"] = current_light[:name]
+            on["on"] = current_light[:on]
+            p on
         end 
         if current_light[:brightness] != previous_light[:brightness]
             brightness["name"] = current_light[:name]
@@ -47,39 +53,40 @@ class LightState
     end 
 
     
-    def updated_light_info() 
+    def listen_for_changes() 
         previous_light = {}
         
         loop do 
-            sleep(1)
+            sleep(0.5)
+            # listens by fetching all lights 
+            # from the api every second
             fetch_all_lights
+
+            # loops through the updated lights 
+            # and checks if there has been any changes
             @lights.values.each do |light|
 
                 if light != previous_light[light[:name]]
                     changes_to_light(light, previous_light[light[:name]])
                 end 
+
                 previous_light[light[:name]] = light
             end 
 
         end 
     end 
 
-    
-
     def run 
         # fetch and print all lights
         self.fetch_all_lights
         p @lights
 
-        # If light state changes it should print again
-        while self.program
-            sleep(3)
-            self.updated_light_info
-        end 
+        # loop and listen for changes
+        self.listen_for_changes
     end 
 end 
 
 if __FILE__ == $PROGRAM_NAME
-    mainObject = LightState.new 
-    mainObject.run
+    watching_lights = LightState.new 
+    watching_lights.run
 end 

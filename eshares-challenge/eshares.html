@@ -1,0 +1,35 @@
+<htmL>
+    <head>
+        <link rel='stylesheet' href="./style.css">
+    </head>
+    <body>
+        <div class='content'>
+            <h1>content</h1>
+        </div>
+        <div class="hidden-content"></div>
+
+        <div class='content'>
+            <h1>content</h1>
+        </div>
+        <div class="hidden-content"></div>
+
+        <div class='content'>
+            <h1>content</h1>
+        </div>
+        <div class="hidden-content"></div>
+
+        <script>
+            blocks = document.querySelectorAll('.content')
+            hiddenBlocks = document.querySelectorAll('.hidden-content')
+            console.log(blocks)
+
+            const unhide = (block) => {
+                block.style.display === 'block' ? block.style.display = 'none' : block.style.display = 'block'
+            }
+
+            blocks.forEach((block, idx) => {
+                block.addEventListener('click', () => unhide(hiddenBlocks[idx]))
+            })
+        </script>
+    </body>
+</html>

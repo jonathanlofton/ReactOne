@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.content {
+    width: 300px;
+    height: 30px;
+    background-color: #DDDDDD;
+}
+
+.hidden-content {
+    display: none;
+    width: 300px;
+    height: 30px;
+    background-color: #4DB0AD;
+}

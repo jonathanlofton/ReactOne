@@ -9,6 +9,11 @@
     width: 300px;
     height: 30px;
     background-color: #DDDDDD;
+    transition: background-color 1s;
+}
+
+.content.active {
+    background-color: blue;
 }
 
 .hidden-content {

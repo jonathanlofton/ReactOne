@@ -3,13 +3,16 @@ require 'json'
 
 class LightState
 
-    attr_reader :lights
+    # attr_reader :lights
     
     def initialize()
         @lights = {}
         @user_account = "newdeveloper"
     end 
 
+    # will take the light, and grab specific information from it
+    # put it into a hash and then set that data to the value of the 
+    # name of the light in the state 
     def light_info(light)
         hash = {}
         hash[:name] = light["name"]
@@ -21,8 +24,13 @@ class LightState
 
     def fetch_all_lights()
         url = "http://localhost/api/#{@user_account}"
+        # open(url).read will show the response from the api call
+        # and show all the data encapsulated as a string
         light = open(url).read
+        # JSON.parse(light) parses the string and creates an actual json or "hash"
+        # to allow for easy access to particular portions of the response
         fetched_lights = JSON.parse(light)
+        
         
         i = 1
         # loops through the fetched_lights 
@@ -60,8 +68,8 @@ class LightState
         
         loop do 
             sleep(0.5)
-            # listens by fetching all lights 
-            # from the api every second
+            # "listens" by fetching all lights 
+            # from the api every 1/2 second
             fetch_all_lights
 
             # loops through the updated lights 
@@ -78,6 +86,9 @@ class LightState
         end 
     end 
 
+    # Why did you use a run method? 
+    # its nice to have the run function
+    # so I can 
     def run 
         # fetch and print all lights
         p "(defaults to 'newdeveloper') what is your Phillips Hues user name? "

@@ -3,8 +3,6 @@ require 'json'
 
 class LightState
 
-    # attr_reader :lights
-    
     def initialize()
         @lights = {}
         @user_account = "newdeveloper"

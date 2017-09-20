@@ -49,3 +49,39 @@
     - Multi-line strings 
     - Enhanced Object literals:
 
+- **Fat-Arrow** 
+    **positives**
+    - Implicit returns if it is a one liner
+        - meaning you don't explicitly have to call 'return'
+    - Cleans up some of the syntax and makes code more readable compared to regular ES5 functions
+    - Doesn't create a new scope
+    **negatives**
+    - No Binding
+        - Cannot reassign 'this' as it 
+    - No Constructors
+        - Can't create an object with an arrow function
+    - No names
+        - Have to save the function as a variable to assign a name to it
+
+- **Callback**
+    - a function that is passed to another function and intended to be called a later time.
+    - a common use case is asynchronous requests
+
+- **Asynchronous**
+    - does not wait for work to be completed, it schedules work to be done in the background, usually the browser window.
+
+- **Event-Loop**
+    - basically allows asynchronous calls to be run in the background and runs any other code while the asynchronous call is being fullfilled.
+
+- **Prototypal Inheritance**
+    - Dog.prototype = Object.create(Animal.prototype)
+    will return a new object with its __proto__ set to whatever argument is passed to Object.create.
+
+- **DOM Document Object Model**
+     - When running code in the browser, the browser provides an API by which JavaScript code can access the HTML content of a page. All major browsers implement it, thought there are quicks across browsers.
+     - example of the API: document.getElementById("cats") asks the browser to find an element with the id
+        - getElementById
+        - getElementByClassName
+        - querySelectorAll
+    - **Events** 
+        - insert and remove elements, change attributes, but this dynamic modicication of the HTML document would be pointless without event handling.

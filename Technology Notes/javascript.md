@@ -85,3 +85,20 @@
         - querySelectorAll
     - **Events** 
         - insert and remove elements, change attributes, but this dynamic modicication of the HTML document would be pointless without event handling.
+        - addEventListener('click, submit, etc', callback)
+        - the event listener will store a function and call that function when the specific event happens
+    - **AJAX**: 
+    - **EventPropogation** 
+        - If you have a div within a div, if you have the outer div have an eventlistener on it and you click on the inner div the listener will propogate up
+        -  to stop propogation you can do e.stopPropagation();
+    - **Vanilla JavaScript** 
+        - writing in JS without any enhancements or libraries like jQuery
+        - you might want to use jQuery with rails b/c it automatically will handle CSRF tokens for us, turn JSON(a string) into JavaScript objects.
+        - ex of WMLHTTPREQUEST
+            - const xhr = new WMLHttpRequest();
+            - xhr.open('OPEN', 'api/path/to/resource');
+            - xhr.onload = function () {
+                console.log(xhr.status)
+                console.log(xhr.responseType)
+                console.log(xhr.response)
+            }

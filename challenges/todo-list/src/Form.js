@@ -12,6 +12,7 @@ class Form extends React.Component {
     }
 
     this.createTodo = this.createTodo.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
 
   componentWillMount() {
@@ -42,6 +43,10 @@ class Form extends React.Component {
     })
   }
 
+  updateState(property) {
+    return e => this.setState({[property]: e.target.value})
+  }
+
   render() {
     console.log(this.state)
     const Data = this.state.todos;
@@ -50,14 +55,14 @@ class Form extends React.Component {
     ))
     return(
       <div>
-      <ul style={{ listStyleType: 'none' }}>
-        {todoItems}
-      </ul>
-      <form onSubmit={this.createTodo} style={{ display: 'flex', flexDirection: 'column', margin: 'auto', width: 300 }}>
-        Title: <input type='text' value={this.state.title} onChange={e => this.setState({ title: e.target.value })} />
-        Body: <input type='text' value={this.state.body} onChange={e => this.setState({ body: e.target.value })} />
-        <button>Create Todo</button>
-      </form>
+        <ul style={{ listStyleType: 'none' }}>
+          {todoItems}
+        </ul>
+        <form onSubmit={this.createTodo} style={{ display: 'flex', flexDirection: 'column', margin: 'auto', width: 300 }}>
+          Title: <input type='text' value={this.state.title} onChange={this.updateState('title')} />
+          Body: <input type='text' value={this.state.body} onChange={this.updateState('body')} />
+          <button>Create Todo</button>
+        </form>
       </div>
     )
   }

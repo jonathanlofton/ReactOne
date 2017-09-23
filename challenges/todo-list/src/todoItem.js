@@ -6,7 +6,12 @@ class TodoItem extends React.Component {
     this.state = {
       todos: [],
     }
-    this.completedTodo = this.completedTodo.bind(this)
+    this.completedTodo = this.completedTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({todos: this.props.Data})
   }
   
   completedTodo(todo) {
@@ -15,10 +20,17 @@ class TodoItem extends React.Component {
     this.setState({ todos: newList })
   }
 
+  removeTodo(todo) {
+    let currentTodos = this.state.todos;
+    let newList = currentTodos.filter(todos => todos.title !== todo.title)
+    console.log(newList)
+    this.setState({ todos: newList })
+    console.log(this.state)
+  }
+
   render() {
-    console.log(this.props.todo)
-    const { todo } = this.props;
-    return(
+    const { Data } = this.props;
+    const items = Data.map((todo, idx) => (
       <li key={todo.id}>
         <p style={{ fontSize: 20 }}>
           {todo.title}
@@ -30,7 +42,15 @@ class TodoItem extends React.Component {
         >
           {todo.finished ? 'completed' : 'incomplete'}
         </button>
+        <button onClick={() => this.removeTodo(todo)}>
+          Remove Todo
+        </button>
       </li>
+    ))
+    return(
+      <div>
+        {items}
+      </div>
     )  
   }
 }

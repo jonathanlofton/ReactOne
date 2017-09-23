@@ -50,9 +50,7 @@ class Form extends React.Component {
   render() {
     console.log(this.state)
     const Data = this.state.todos;
-    const todoItems = Data.map((todo, idx) => (
-      <TodoItem todo={todo} />
-    ))
+    const todoItems =  <TodoItem Data={Data}/>
     return(
       <div>
         <ul style={{ listStyleType: 'none' }}>

@@ -59,3 +59,14 @@ const flatten = (array, result = []) => {
 }
 
 console.log(flatten([1,2,3,[2,3,[3],1,2]]))
+
+// Fibonacci 
+
+const fibonacci = (num) => {
+    if (num < 1) { return 0 }
+    if (num === 1) { return 1 }
+
+   return (fibonacci(num - 1) + fibonacci(num - 2))
+}
+
+console.log(fibonacci(10))

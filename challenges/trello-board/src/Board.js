@@ -51,6 +51,7 @@ class Board extends React.Component {
 
     const allTiles = tiles.map((tile, idx) => (
       <div style={{ display: 'flex', justifyContent: 'center' }} key={idx}>
+          <h4>{idx + 1}</h4>
           <p>
             { tile.content }
           </p>

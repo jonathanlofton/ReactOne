@@ -39,12 +39,14 @@ class Board extends React.Component {
     const { tiles } = this.state;
 
     const allTiles = tiles.map((tile, idx) => (
-      <div style={{ display: 'flex' }} key={idx}>
-        <button onClick={() => this.moveUp(idx)}>UP</button>
+      <div style={{ display: 'flex', justifyContent: 'center' }} key={idx}>
           <p>
             { tile.content }
           </p>
-          <button onClick={() => this.moveDown(idx)}>DOWN</button>
+          <div style={{ display: 'flex', flexDirection: 'column'}}>
+            <button onClick={() => this.moveUp(idx)}>UP</button>
+            <button onClick={() => this.moveDown(idx)}>DOWN</button>
+          </div>
       </div>
     ))
 

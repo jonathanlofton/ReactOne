@@ -19,19 +19,30 @@ class Board extends React.Component {
 
   moveUp(idx) {
     const prevState = this.state.tiles;
-    const newState = prevState.slice(0, idx - 1)
-      .concat([prevState[idx]])
-      .concat([prevState[idx - 1]])
-      .concat(prevState.slice(idx + 1))
+    let newState;
+    if (idx === 0) {
+      newState = prevState.slice(1).concat([prevState[0]])
+    } else {
+      newState = prevState.slice(0, idx - 1)
+        .concat([prevState[idx]])
+        .concat([prevState[idx - 1]])
+        .concat(prevState.slice(idx + 1))
+    }
     this.setState({ tiles: newState })
   }
 
   moveDown(idx) {
     const prevState = this.state.tiles;
-    const newState = prevState.slice(0, idx)
-    .concat([prevState[idx + 1]])
-    .concat([prevState[idx]])
-    .concat(prevState.slice(idx + 2))
+    let newState;
+    if (idx === prevState.length - 1) {
+      let length = prevState.length - 1
+      newState = [prevState[length]].concat(prevState.slice(0, length))
+    } else {
+      newState = prevState.slice(0, idx)
+        .concat([prevState[idx + 1]])
+        .concat([prevState[idx]])
+        .concat(prevState.slice(idx + 2))
+    }
     this.setState({ tiles: newState })
   }
   

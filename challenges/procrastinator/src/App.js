@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import RedditFeed from './reddit_feed';
-import './App.css';
+import './App.scss';
+import './reddit-item.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className='App'>
+        <div className='header'>
         </div>
-        <RedditFeed />
+        <div className='sidebar'>
+        </div>
+        <div className='body'>
+          <RedditFeed />
+        </div>
+        <div className='footer'>
+        </div>
       </div>
     );
   }

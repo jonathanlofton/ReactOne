@@ -102,3 +102,27 @@
                 console.log(xhr.responseType)
                 console.log(xhr.response)
             }
+
+# Questions 
+1.) difference between call and apply?
+    - using call apply or bind all has to deal with scope.
+    - general use function.apply(objectThatYouNeedScopeOf, additionalArguments)
+    - call will take in additional arguments separated with commas while apply will take in an array for additional arguments, great for when you don't know how many arguments a function may need to take
+    ```javascript
+
+    ```
+
+2.) difference between setTimeout() and setInterval?
+    - setTimeout will wait to run a function or some line of code for some set amount of time
+    - setInterval will do the same thing but it will then go in a loop and keep calling it every set amount of time
+3.) Explain what a closure is and give examples of when to use them and why it makes sense (maybe why it doesn't make sense as well)
+    - a closure is when a function will use another function and the outer functions scope
+    - a practical use of a closure would be to use an object that would only use a single method
+    - a callback that is used for a button press is considered a 
+4.) What does it mean that javascript is singlethreaded?
+5.) What is prototypal inheritance
+6.) How do you make an AJAX call? 
+7.) difference between undefined and null
+8.) What statement gets a reference to a DOM node by ID?
+9.) How do you implement a Map? 
+10.) How do you create a multidimensional array? 

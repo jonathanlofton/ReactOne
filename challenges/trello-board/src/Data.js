@@ -10,7 +10,17 @@ const Tiles = [
   },
   {
     content: 'this is what is up'
+  },
+  {
+    content: 'huh'
+  },
+  {
+    content: 'what'
+  },
+  {
+    content: 'googuhly?'
   }
+
 ]
 
 export default Tiles

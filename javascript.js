@@ -19,7 +19,6 @@ let john = new Person("john");
 // call or apply when you can use the same function for different classes / objects 
 // use call apply or bind when you want to pass a different this value to the function. 
 
-
 birthday.call(john, 9)
 console.log(john.age)
 birthday.call(spunk, 7)
@@ -41,7 +40,6 @@ console.log(john)
 // console.log(john)
 // check2(4);
 // console.log(john)
-
 
 // My Flatten 
 

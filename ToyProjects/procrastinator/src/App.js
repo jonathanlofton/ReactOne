@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
 import RedditFeed from './reddit/reddit_feed';
 import Header from './header/header';
 import SideBar from './sidebar/sidebar';
@@ -16,16 +17,16 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='header'>
-          <Header />
+          <Route path='/' component={Header} />
         </div>
         <div className='sidebar'>
-          <SideBar />
+          <Route path='/' component={SideBar} />
         </div>
         <div className='body'>
-            <RedditFeed />
+          <Route path='/reddit' component={RedditFeed} />
         </div>
         <div className='footer'>
-          <Footer />
+          <Route path='/' component={Footer} />
         </div>
       </div>
     );

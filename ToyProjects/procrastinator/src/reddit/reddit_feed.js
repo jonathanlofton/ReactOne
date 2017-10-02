@@ -29,8 +29,8 @@ class RedditFeed extends React.Component {
     ))
 
     return(
-      <div>
-        <h1>Reddit Feed</h1>
+      <div className='body-content'>
+        <h1 className='body-header'>Reddit Feed</h1>
         { redditItems }
       </div>
     )

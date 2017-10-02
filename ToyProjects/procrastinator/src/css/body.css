@@ -1,0 +1,16 @@
+.body {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  bottom: 5%;
+  left: 20%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+.body-header {
+  margin: 5%;
+}
+

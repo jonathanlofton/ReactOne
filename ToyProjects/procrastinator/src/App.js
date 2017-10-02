@@ -5,6 +5,11 @@ import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
 import './css/App.css';
 import './css/reddit-item.css';
+import './css/header.css';
+import './css/body.css';
+import './css/sidebar.css';
+import './css/footer.css';
+
 
 class App extends Component {
   render() {
@@ -17,7 +22,7 @@ class App extends Component {
           <SideBar />
         </div>
         <div className='body'>
-          <RedditFeed />
+            <RedditFeed />
         </div>
         <div className='footer'>
           <Footer />

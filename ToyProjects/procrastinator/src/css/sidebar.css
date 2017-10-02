@@ -1,0 +1,30 @@
+.sidebar {
+    position: fixed;
+    top: 10%;
+    right: 80%;
+    bottom: 5%;
+    left: 0;
+    background-color: #DBDBDB;
+
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-content {
+    margin: 5% 0;
+    width: 80%;
+}
+
+.sidebar-header {
+    text-decoration: underline;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.sidebar-site {
+    letter-spacing: 3px;
+    font-weight: 900;
+    background: white;
+    padding: 10px;
+}
+

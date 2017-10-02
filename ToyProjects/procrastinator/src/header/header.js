@@ -4,8 +4,8 @@ class Header extends React.Component {
   render () {
     return (
       <div style={{marginLeft: '3%'}}>
-        <h2>Procrastinator</h2>
-        <p>Where you ruin your life..</p>
+        <h1 className='header-title'>Procrastinator</h1>
+        <p>C'mon you deserve a break...</p>
       </div>
     )
   }

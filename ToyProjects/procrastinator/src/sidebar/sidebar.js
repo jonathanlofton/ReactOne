@@ -9,6 +9,9 @@ class SideBar extends React.Component {
         <Link to="/reddit">
           <h2 className='sidebar-site'>Reddit</h2>
         </Link>
+        <Link to="/podcast">
+          <h2 className='sidebar-site'>Podcasts</h2>
+        </Link>
       </div>
     )
   }

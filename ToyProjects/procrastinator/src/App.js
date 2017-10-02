@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import RedditFeed from './reddit/reddit_feed';
+import PodcastFeed from './podcasts/podcast_feed';
 import Header from './header/header';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
@@ -24,6 +25,7 @@ class App extends Component {
         </div>
         <div className='body'>
           <Route path='/reddit' component={RedditFeed} />
+          <Route path='/podcast' component={PodcastFeed} />
         </div>
         <div className='footer'>
           <Route path='/' component={Footer} />

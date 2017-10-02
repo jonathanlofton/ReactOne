@@ -1,5 +1,10 @@
-# Side Project Repository
+# What is this?
 
-A repository to put all of my toy apps into, it's a bit of a rats nest but it is what it is.
+This is a repository for me to put smaller scale projects which can include projects that I thought would be fun to make, projects based on learning a new technology, and anything else I'm currently messing around with.
 
-- framework notes
+# Toy Projects
+
+## Procrastination
+This is a project that I thought would be cool to utilize the API's of some of my favorite websites and host their content all on one platform!
+
+I currently have reddit on here but would like to add additional news resources and the such.

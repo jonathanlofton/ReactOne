@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import RedditFeed from './reddit/reddit_feed';
 import PodcastFeed from './podcasts/podcast_feed';
 import Header from './header/header';

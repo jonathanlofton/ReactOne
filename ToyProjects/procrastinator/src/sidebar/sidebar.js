@@ -2,15 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
+
+  handleClick(site) {
+    let activeLink = document.querySelector('.active-sidebar-site')
+    if (activeLink) { 
+      activeLink.className = 'sidebar-site';
+    }
+    let button = document.getElementById(site)
+    button.className = button.className == 'sidebar-site' ? 'active-sidebar-site' : 'sidebar-site';
+  }
+  
   render() {
     return (
       <div className='sidebar-content'>
         <h1 className='sidebar-header'>Sites</h1>
-        <Link to="/reddit">
-          <h2 className='sidebar-site'>Reddit</h2>
+        <Link to="/reddit" onClick={() => this.handleClick('reddit')}>
+          <h2 id='reddit' className='sidebar-site'>Reddit</h2>
         </Link>
-        <Link to="/podcast">
-          <h2 className='sidebar-site'>Podcasts</h2>
+        <Link to="/podcast" onClick={() => this.handleClick('podcast')}>
+          <h2 id='podcast' className='sidebar-site'>Podcasts</h2>
         </Link>
       </div>
     )

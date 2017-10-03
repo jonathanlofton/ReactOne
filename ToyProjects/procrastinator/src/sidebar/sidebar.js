@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 class SideBar extends React.Component {
 
   handleClick(site) {
+    // if there is an active link change the color
     let activeLink = document.querySelector('.active-sidebar-site')
-    if (activeLink) { 
-      activeLink.className = 'sidebar-site';
-    }
-    let button = document.getElementById(site)
-    button.className = button.className == 'sidebar-site' ? 'active-sidebar-site' : 'sidebar-site';
+    if (activeLink) { activeLink.className = 'sidebar-site'; }
+
+    // this link is now active and should be colored
+    let link = document.getElementById(site)
+    link.className = link.className == 'sidebar-site' ? 'active-sidebar-site' : 'sidebar-site';
   }
   
   render() {

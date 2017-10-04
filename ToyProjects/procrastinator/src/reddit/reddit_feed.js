@@ -21,9 +21,9 @@ class RedditFeed extends React.Component {
   }
 
   render() {
-    console.log(this.state)
-    const { reddit } = this.state;
 
+    const { reddit } = this.state;
+    
     const redditItems = reddit.map((post, idx) => (
       <RedditItem post={post} key={idx}/>
     ))

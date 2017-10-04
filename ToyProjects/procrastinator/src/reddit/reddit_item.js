@@ -2,7 +2,6 @@ import React from 'react';
 
 class RedditItem extends React.Component {
   render() {
-    console.log(this.props)
     const { author, permalink, subreddit, title, thumbnail, score,  } = this.props.post.data
     const redditLink = `https://www.reddit.com${permalink}`
     const redditSnoo = 'https://s3-us-west-2.amazonaws.com/jonathan-portfolio-dev/snoo.jpg'

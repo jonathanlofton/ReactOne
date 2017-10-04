@@ -71,13 +71,13 @@ const fibonacci = (num) => {
 
 console.log(fibonacci(10))
 
-Hello SQA team!
+Hello SurveyMonkey Team!
 
 My name is Jonathan and I'm a Full-stack Software Engineer based out of San Francisco. I pride myself on being a quick learner, look at the three of my most recent projects on my profile, I made all of them in a month and each one is using a different technology. If you have some time check out one my full stack projects 'Drift' (driftmusic.us) which is a single page music app that utilizes the following technologies: React, Redux, Ruby on Rails, and PostgreSQL. 
 
-I have experience in the technologies that SQA solution utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what SQA solution has in store for the future.
+I have experience in the technologies that SurveyMonkey utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what SurveyMonkey has in store for the future.
 
-If you have some more time please checkout my portfolio page (jonathanlofton.com) and get a better idea of who I'am and what I have created!
+If you have some more time please checkout my portfolio page (jonathanlofton.com) and get a better idea of who I'am and what I have created.
 
 Thank you for your time.
 
@@ -86,3 +86,19 @@ Thank you for your time.
 What makes you unique?
 
 I have a background in Environmental Chemistry Research where I was doing extractions and data analysis on Coho Salmon and I was also introduced to programming there. Now I'm a fullstack software engineer in San Francisco building cool projects like driftmusic.us, learn more about me at jonathanlofton.com!
+
+Questions for someone?
+
+What was your strategy for job search? 
+    - job boards like indeed? linkedin? angelist?
+        - Which one do you think worked the best for you and why?
+    
+    - Did you connect with recruiters on linkedin and message them to try and spark something?
+
+What was your study plan? 
+
+Is it worth it to start a new project? or would my time be better spent looking at cracking the coding interview and other study materials?
+
+Once you got a job was it anything like you imagined? 
+
+And just any general advice you would have given yourself in job search.

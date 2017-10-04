@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import RedditFeed from './reddit/reddit_feed';
-import PodcastFeed from './podcasts/podcast_feed';
+import BeerFeed from './beers/beer_feed';
 import Header from './header/header';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
@@ -25,7 +25,7 @@ class App extends Component {
         </div>
         <div className='body'>
           <Route path='/reddit' component={RedditFeed} />
-          <Route path='/podcast' component={PodcastFeed} />
+          <Route path='/beers' component={BeerFeed} />
         </div>
         <div className='footer'>
           <Route path='/' component={Footer} />

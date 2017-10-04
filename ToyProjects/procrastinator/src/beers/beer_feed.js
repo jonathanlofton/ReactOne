@@ -1,7 +1,7 @@
 import React from 'react';
 import config from '../config.js'
 
-class PodcastFeed extends React.Component {
+class BeerFeed extends React.Component {
   constructor(props) {
     super(props)
     this.state ={
@@ -62,4 +62,4 @@ class PodcastFeed extends React.Component {
   }
 }
 
-export default PodcastFeed;
+export default BeerFeed;

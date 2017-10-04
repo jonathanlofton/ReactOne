@@ -20,8 +20,8 @@ class SideBar extends React.Component {
         <Link to="/reddit" onClick={() => this.handleClick('reddit')}>
           <h2 id='reddit' className='active-sidebar-site'>Reddit</h2>
         </Link>
-        <Link to="/podcast" onClick={() => this.handleClick('podcast')}>
-          <h2 id='podcast' className='sidebar-site'>Podcasts</h2>
+        <Link to="/beers" onClick={() => this.handleClick('beers')}>
+          <h2 id='beers' className='sidebar-site'>Beers</h2>
         </Link>
       </div>
     )

@@ -71,11 +71,11 @@ const fibonacci = (num) => {
 
 console.log(fibonacci(10))
 
-Hello SurveyMonkey Team!
+Hello Mercury Team!
 
 My name is Jonathan and I'm a Full-stack Software Engineer based out of San Francisco. I pride myself on being a quick learner, look at the three of my most recent projects on my profile, I made all of them in a month and each one is using a different technology. If you have some time check out one my full stack projects 'Drift' (driftmusic.us) which is a single page music app that utilizes the following technologies: React, Redux, Ruby on Rails, and PostgreSQL. 
 
-I have experience in the technologies that SurveyMonkey utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what SurveyMonkey has in store for the future.
+I have experience in the technologies that Mercury utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what Mercury has in store for the future.
 
 If you have some more time please checkout my portfolio page (jonathanlofton.com) and get a better idea of who I'am and what I have created.
 

@@ -71,13 +71,11 @@ const fibonacci = (num) => {
 
 console.log(fibonacci(10))
 
-Hello Dolly Team!
+Hello Brain Wave Team
 
-My name is Jonathan and I'm a Full-stack Software Engineer based out of San Francisco. I pride myself on being a quick learner, look at the three of my most recent projects on my profile, I made all of them in a month and each one is using a different technology. If you have some time check out one my full stack projects 'Drift' (driftmusic.us) which is a single page music app that utilizes the following technologies: React, Redux, Ruby on Rails, and PostgreSQL. 
+My name is Jonathan and I'm a Full-stack Software Engineer based out of San Francisco. I pride myself on being a quick learner, look at three of my most recent projects on (jonathanlofton.com), I made all of them in a month and each one is using a different technology. If you have some time check out one my full stack projects 'Drift' (driftmusic.us) which is a single page music app that utilizes the following technologies: React, Redux, Ruby on Rails, and PostgreSQL. 
 
-I have experience in the technologies that Dolly utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what Dolly has in store for the future.
-
-If you have some more time please checkout my portfolio page (jonathanlofton.com) and get a better idea of who I'am and what I have created.
+I have experience in the technologies that Brain Wave utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what Brain Wave has in store for the future.
 
 Thank you for your time.
 
@@ -102,3 +100,17 @@ Is it worth it to start a new project? or would my time be better spent looking 
 Once you got a job was it anything like you imagined? 
 
 And just any general advice you would have given yourself in job search.
+
+#### Hiring manager message
+
+[Name], I just applied online for [Companies name] [JOB TITLE] position, and I am very interested in this job opportunity, I wanted to reach out to you directly because my background makes me particularly well suited for the position.
+
+You seek someone with [A, B, C and D JOB REQUIREMENTS].I have working applications that you can checkout through my portfolio site (jonathanlofton.com) or through my github (https://github.com/jonathanlofton).
+
+I think I would be able to learn a lot and contribute a lot through working at [] and I would love the opportunity to maybe grab a coffee and pick your brain about the company. If you would like to get in contact with me my number is 813-455-8689 and my email is jonathanlofton91@gmail.com 
+
+Thank you for taking the time to read this,
+
+- Jonathan
+
+#### MALLIK SCRIPT 

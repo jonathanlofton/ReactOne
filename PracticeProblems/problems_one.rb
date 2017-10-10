@@ -11,7 +11,7 @@ def question_marks(string)
         return false 
       else
         count += 1
-        first_num = nil 
+        first_num = ch.to_i 
       end 
     end 
     question_mark_count += 1 if ch == "?"
@@ -24,4 +24,8 @@ def is_integer?(ch)
 end
 
 p "#{question_marks("aa6?9")}: should be false"
+p "#{question_marks("arrb6???4xxbl5???eee5")}: should be true"
 p "#{question_marks("acc?7??sss?3rr1??????5")}: should be true"
+p "#{question_marks("5??aaaaaaaaaaaaaaaaaaa?5?5")}: should be false"
+p "#{question_marks("9???1???9???1???9")}: should be true"
+

@@ -128,3 +128,12 @@
 10.) How do you create a multidimensional array? 
 
 **Event Loop**
+- Callstack
+- Web API
+- Callback Queue
+- EventLoop
+
+**Closure**
+- A function that is nested within a function
+
+**A function that basically points to another function to be run a later time**

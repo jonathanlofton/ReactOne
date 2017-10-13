@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {signup} from './util/session_util';
+import {signup, login} from './util/session_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  
-  window.createUser = signup;
   
   const root = document.getElementById('root');
 

@@ -4,42 +4,37 @@ class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: '',
+      name: '',
       password: ''
     }
+    this.signUp = this.signUp.bind(this);
   }
 
-  createUser = () => {
+  signUp() {
     const { createUser } = this.props;
-    const newUser = {user: {
-        name: this.state.username,
-      password: this.state.password
-      }}
-    console.log(newUser)
+
     createUser({
       user: {
-        name: this.state.username,
+        name: this.state.name,
         password: this.state.password
       }
     })
+    this.props.history.push('/home');
   }
 
-  changeUsername = (e) => {
-    this.setState({ username: e.target.value })
-    console.log(this.state)
+  changename = (e) => {
+    this.setState({ name: e.target.value })
   }
 
   changePassword = (e) => {
     this.setState({ password: e.target.value })
-    console.log(this.state)
   }
 
   render() {
-    console.log(this.props)
     return(
       <div>
-        <form onSubmit={() => this.createUser()}>
-          <input type='text' value={this.state.username} onChange={(e) => this.changeUsername(e)}/>
+        <form onSubmit={() => this.signUp()}>
+          <input type='text' value={this.state.name} onChange={(e) => this.changename(e)}/>
           <input type='text' value={this.state.password} onChange={(e) => this.changePassword(e)}/>
           <button>Create Account</button>
         </form>

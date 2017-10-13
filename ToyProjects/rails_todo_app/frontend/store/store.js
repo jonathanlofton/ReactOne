@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import RootReducer from '../reducers/root_reducer';
 
 const defaultState = {
-  currentUser: '',
+  
 }
 
 const configureStore = (preloadedState = defaultState) => (

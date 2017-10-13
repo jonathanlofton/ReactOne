@@ -3,15 +3,13 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import RootReducer from '../reducers/root_reducer';
 
-const defaultState = {
-  
-}
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const configureStore = (preloadedState = defaultState) => (
+const configureStore = (preloadedState) => (
   createStore(
     RootReducer,
     preloadedState,
-    applyMiddleware(thunk, logger),
+    composeEnhancers(applyMiddleware(thunk, logger)),
   )
 )
 

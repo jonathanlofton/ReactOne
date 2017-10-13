@@ -1,4 +1,4 @@
-import signup from '../../actions/session_action';
+import { signup } from '../../actions/session_action';
 import Login from './login';
 import { connect } from 'react-redux';
 
@@ -7,7 +7,7 @@ const mapStateToProps = ({ session }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  login: (user) => dispatch(signup(user)),
+  createUser: (user) => dispatch(signup(user)),
 })
 
 export default connect(

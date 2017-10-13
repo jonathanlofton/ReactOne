@@ -10,7 +10,18 @@ class Login extends React.Component {
   }
 
   createUser = () => {
-    console.log("created user")
+    const { createUser } = this.props;
+    const newUser = {user: {
+        name: this.state.username,
+      password: this.state.password
+      }}
+    console.log(newUser)
+    createUser({
+      user: {
+        name: this.state.username,
+        password: this.state.password
+      }
+    })
   }
 
   changeUsername = (e) => {

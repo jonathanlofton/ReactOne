@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
-import configureStore from './store/store'
+import configureStore from './store/store';
+import {signup} from './util/session_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   
-  window.fart = () => (console.log("fart"))
+  window.createUser = signup;
   
   const root = document.getElementById('root');
 

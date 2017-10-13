@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
     resource :session, only: [:new, :create, :destroy], defaults: {format: 'json'}
     resources :users, only: [:new, :index, :create, :destroy, :show], defaults: {format: 'json'}
+    resources :blog_posts, only: [:new, :index, :show, :create, :destroy], defaults: {format: 'json'}
 
     root to: 'static_pages#root'
 end

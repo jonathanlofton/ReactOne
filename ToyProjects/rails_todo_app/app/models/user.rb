@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :session_token, :name, uniqueness: true
 
+  has_many :blog_posts
+
   # has_many :subs,
   #   class_name: :Sub,
   #   foreign_key: :moderator_id,

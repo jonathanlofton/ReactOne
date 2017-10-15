@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  posts: BlogPostReducer,
+  blogPosts: BlogPostReducer,
 });
 
 export default RootReducer;

@@ -44,25 +44,33 @@ class LandingPage extends React.Component {
     if (!this.props.blogPosts.allPosts) {
       return null 
     }
+
     const { allPosts } = this.props.blogPosts;
+    console.log(allPosts)
     const blogPosts = allPosts.map((post, idx) => (
-      <li key={idx}>
-        <p>{post.title}</p>
-        <p>{post.body}</p>
+      <li key={idx} className="blog-post">
+        <p className="post-title">{post.title}</p>
+        <p className="post-body">{post.body}</p>
+        <p className="post-creator">{post.creator}</p>
       </li>
     ))
 
 
     return(
-      <div>
-        <form onSubmit={() => this.createPostOnPress()}>
+      <div className="landing-page-body">
+        
+        <form onSubmit={() => this.createPostOnPress()} className="create-post-form">
+          <h1>Create Post</h1>
           <input type="text" onChange={(e) => this.changeTitle(e)}/>
           <input type="text" onChange={(e) => this.changeBody(e)}/>
           <button>Create Post</button>
-          <ul>
-            { blogPosts }
-          </ul>
         </form>
+        <ul className="blog-post-list">
+          <li>
+            <h1>All Posts</h1>
+          </li>
+          {blogPosts}
+        </ul>
       </div>
     )
   }

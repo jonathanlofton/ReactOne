@@ -71,11 +71,11 @@ const fibonacci = (num) => {
 
 console.log(fibonacci(10))
 
-Hello Roblox Team
+Hello Vium Team
 
 My name is Jonathan and I'm a Full-stack Software Engineer based out of San Francisco. I pride myself on being a quick learner, look at three of my most recent projects on (jonathanlofton.com), I made all of them in a month and each one is using a different technology. If you have some time check out one my full stack projects 'Drift' (driftmusic.us) which is a single page music app that utilizes the following technologies: React, Redux, Ruby on Rails, and PostgreSQL. 
 
-I have experience in the technologies that Roblox utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what Roblox has in store for the future.
+I have experience in the technologies that Vium utilizes, which is great because I love working with those technologies. I also have an affinity for the Frontend and UI / UX, I can get obsessed with the details of making a website beautiful and intuitive. I'm excited to see what Vium has in store for the future.
 
 Thank you for your time.
 

@@ -5,3 +5,10 @@ export const createPost = post => (
     data: post
   })
 )
+
+export const fetchPosts = () => (
+  $.ajax({
+    method: 'GET',
+    url: '/blog_posts'
+  })
+)

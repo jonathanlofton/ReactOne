@@ -11,6 +11,10 @@ class LandingPage extends React.Component {
     this.createPostOnPress = this.createPostOnPress.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchAllPosts();
+  }
+
   createPostOnPress() {
     const { createPost } = this.props;
     const { currentUser} = this.props.session;

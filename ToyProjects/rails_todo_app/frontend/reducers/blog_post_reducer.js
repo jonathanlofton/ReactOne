@@ -8,11 +8,13 @@ const nullState = Object.freeze({
 
 const BlogPostReducer = (state = nullState, action) => {
   Object.freeze(state);
+  console.log(action)
   switch (action.type) {
     case RECEIVE_BLOG_POST:
       const { post } = action;
+      const posts = state.posts.concat(post)
       return Object.assign({}, nullState, {
-        posts: state[posts].push(post)
+        posts
       });
     default:
       return state;

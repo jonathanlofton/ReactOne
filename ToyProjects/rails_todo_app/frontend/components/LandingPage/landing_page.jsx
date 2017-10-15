@@ -52,6 +52,7 @@ class LandingPage extends React.Component {
         <p className="post-title">{post.title}</p>
         <p className="post-body">{post.body}</p>
         <p className="post-creator">{post.creator}</p>
+        <button>Add Comment</button>
       </li>
     ))
 

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :session_token, :name, uniqueness: true
 
   has_many :blog_posts
+  has_many :comments
 
   # has_many :subs,
   #   class_name: :Sub,

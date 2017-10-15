@@ -1,0 +1,33 @@
+
+@import 'reset';
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 90%;
+  left: 0;
+  background-color: $primary-color;
+}
+
+.body {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  bottom: 10%;
+  left: 0;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  top: 95%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $secondary-color;
+}

@@ -1,10 +1,13 @@
 
-$default-font: Helvetica, sans-serif;
-$default-font-color: #606060;
+$font: Helvetica, sans-serif;
+$font-color: #606060;
+
+$primary-color: #3A8AB2;
+$secondary-color: #55849C;
 
 * {
   margin: 0;
   padding: 0;
-  font-family: $default-font;
-  color: $default-font-color;
+  font-family: $font;
+  color: $font-color;
 }

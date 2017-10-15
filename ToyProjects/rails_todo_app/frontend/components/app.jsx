@@ -1,14 +1,14 @@
 import React from 'react';
-import LoginContainer from './Login/login_container';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 import Scaffold from './LandingPage/scaffold';
-import { Route } from 'react-router-dom';
 
-class App extends React.Component {
-  render() {
-    return(
-        <Scaffold />
-    )
-  }
-}
+const App = ({ store }) => (
+  <Provider store={store}>
+    <HashRouter>
+      <Scaffold />
+    </HashRouter>
+  </Provider>
+);
 
 export default App;

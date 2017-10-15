@@ -32,8 +32,9 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div>
-        <form onSubmit={() => this.signUp()}>
+      <div className="sign-up-container">
+        <h1>Create Account</h1>
+        <form onSubmit={() => this.signUp()} className="sign-up-form">
           <input type='text' value={this.state.name} onChange={(e) => this.changename(e)}/>
           <input type='text' value={this.state.password} onChange={(e) => this.changePassword(e)}/>
           <button>Create Account</button>

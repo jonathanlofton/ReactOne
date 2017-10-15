@@ -7,7 +7,7 @@ const mapStateToProps = ({session}) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  createPost: (post) => createPost(post)
+  createPost: (post) => dispatch(createPost(post))
 })
 
 export default connect(

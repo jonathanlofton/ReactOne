@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_BLOG_POST } from '../actions/blog_post_actions';
 
 const nullState = Object.freeze({
-  posts: null,
+  posts: [],
 });
 
 const BlogPostReducer = (state = nullState, action) => {
@@ -12,7 +12,7 @@ const BlogPostReducer = (state = nullState, action) => {
     case RECEIVE_BLOG_POST:
       const { post } = action;
       return Object.assign({}, nullState, {
-        posts: posts.push(post)
+        posts: state[posts].push(post)
       });
     default:
       return state;

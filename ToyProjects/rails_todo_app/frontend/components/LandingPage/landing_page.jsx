@@ -8,21 +8,18 @@ class LandingPage extends React.Component {
       title: '',
       body: '',
     }
-  }
-  
-  
-  onSubmit() {
+    this.createPostOnPress = this.createPostOnPress.bind(this);
   }
 
   createPostOnPress() {
     const { createPost } = this.props;
     const { currentUser} = this.props.session;
-    const newPost = {
-      user_id: this.currentUser.id,
-      title: this.state.title,
-      body: this.state.body
-    }
-    console.log(newPost)
+    createPost(
+      { blog_post: {
+          user_id: currentUser.id,
+          title: this.state.title,
+          body: this.state.body
+      }})
   }
 
   changeTitle(e) {

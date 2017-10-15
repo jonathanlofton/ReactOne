@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER } from '../actions/session_action';
 
 const nullState = Object.freeze({
-  currentUser: null,
+  currentUser: { id: 1 },
   errors: [],
 });
 

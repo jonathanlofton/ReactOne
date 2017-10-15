@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import {signup, login} from './util/session_util';
-import { createPost } from './util/blog_post_util';
+import { createPost } from './actions/blog_post_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

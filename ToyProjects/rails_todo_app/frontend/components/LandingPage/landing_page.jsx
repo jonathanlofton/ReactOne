@@ -37,6 +37,10 @@ class LandingPage extends React.Component {
       body: e.target.value
     })
   }
+
+  commentForm() {
+    console.log("goose")
+  }
   
   render() {
     console.log(this.props)
@@ -48,12 +52,27 @@ class LandingPage extends React.Component {
     const { allPosts } = this.props.blogPosts;
     console.log(allPosts)
     const blogPosts = allPosts.map((post, idx) => (
-      <li key={idx} className="blog-post">
-        <p className="post-title">{post.title}</p>
-        <p className="post-body">{post.body}</p>
-        <p className="post-creator">{post.creator}</p>
-        <button>Add Comment</button>
-      </li>
+      <ul key={idx} className="blog-post">
+        <li>
+          <p className="post-title">{post.title}</p>
+          <p className="post-body">{post.body}</p>
+          <p className="post-creator">{post.creator}</p>
+          <button onClick={() => this.commentForm()}>Add Comment</button>
+        </li>
+        <li className="comment-form">
+          <input type="text" />
+          <input type="text" />
+          <button>Post Comment</button>
+        </li>
+        <li>
+          {post.comments.map((comment, idx) =>(
+            <p key={idx} className="post-comment">
+              {comment.body}
+            </p>
+          ))}
+        </li>
+      </ul>
+
     ))
 
 

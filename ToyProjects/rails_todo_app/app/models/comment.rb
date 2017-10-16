@@ -3,4 +3,8 @@ class Comment < ApplicationRecord
 
   belongs_to :user 
   belongs_to :blog_post
+
+  has_many :comments 
+
+  belongs_to :comment, optional: true
 end

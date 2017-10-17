@@ -12,3 +12,11 @@ export const fetchPosts = () => (
     url: '/blog_posts'
   })
 )
+
+export const createComment = comment => (
+  $.ajax({
+    method: 'POST',
+    url: '/blog_posts',
+    data: comment
+  })
+)

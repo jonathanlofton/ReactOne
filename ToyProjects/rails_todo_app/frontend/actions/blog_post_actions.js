@@ -28,3 +28,10 @@ export const fetchAllPosts = () => dispatch => (
     dispatch(receiveAllPosts(allPosts))
   ), err => dispatch(receiveErrors(err.responseJSON)))
 )
+
+export const createComment = comment => dispatch => (
+  APIUtil.createComment(comment).then(comment => (
+    dispatch(addCommentToPost(comment))
+  ), err => dispatch(receiveErrors(err.responseJSON))
+  )
+)

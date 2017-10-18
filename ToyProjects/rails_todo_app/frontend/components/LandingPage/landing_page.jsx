@@ -58,13 +58,13 @@ class LandingPage extends React.Component {
     console.log(allPosts)
     const blogPosts = allPosts.map((post, idx) => (
       <ul key={idx} className="blog-post">
-        <li>
-          <p className="post-title">{post.title}</p>
+        <li className="blog-post-content">
+          <div className="post-name-title">
+            <p className="post-creator">{post.creator}</p>
+            <p className="post-title">{post.title}</p>
+          </div>
+
           <p className="post-body">{post.body}</p>
-          <p className="post-creator">{post.creator}</p>
-          <button onClick={() => this.commentForm()}>Add Comment</button>
-        </li>
-        <li className="comment-form">
           <input type="text" />
           <input type="text" />
           <button>Post Comment</button>
@@ -83,19 +83,22 @@ class LandingPage extends React.Component {
 
     return(
       <div className="landing-page-body">
-        
-        <form onSubmit={() => this.createPostOnPress()} className="create-post-form">
-          <h1>Create Post</h1>
-          <input type="text" onChange={(e) => this.changeTitle(e)}/>
-          <input type="text" onChange={(e) => this.changeBody(e)}/>
-          <button>Create Post</button>
-        </form>
-        <ul className="blog-post-list">
-          <li>
-            <h1>All Posts</h1>
-          </li>
-          {blogPosts}
-        </ul>
+        <div className="create-post-container">
+          <form onSubmit={() => this.createPostOnPress()} className="create-post-form">
+            <h1>Create Post</h1>
+            <input type="text" className="title-input" onChange={(e) => this.changeTitle(e)}/>
+            <textarea name="paragraph_text" cols="300" rows="10" onChange={(e) => this.changeBody(e)}></textarea>
+            <button>Create Post</button>
+          </form>
+        </div>
+        <div className="blog-post-list-container">
+          <ul className="blog-post-list">
+            <li>
+              <h1>All Posts</h1>
+            </li>
+            {blogPosts}
+          </ul>
+        </div>
       </div>
     )
   }

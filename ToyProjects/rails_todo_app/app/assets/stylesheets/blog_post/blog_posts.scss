@@ -11,36 +11,102 @@
   display: flex;
   justify-content: space-around;
 
-  .create-post-form {
+  .create-post-container {
+    position: fixed;
+    top: 10%;
+    right: 50%;
+    bottom: 5%;
+    left: 0;
     display: flex;
-    flex-direction: column;
-    align-self: center;
+    justify-content: center;
+    align-items: center;
 
-    width: 200px;
-    height: 130px;
-    justify-content: space-around;
+    .create-post-form {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+
+      width: 200px;
+      height: 250px;
+      justify-content: space-around;
+      background-color: white;
+
+      padding: 50px;
+      border-radius: 2px;
+
+      .body-input {
+        height: 40px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+  
+}
+
+.blog-post-list-container {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  bottom: 5%;
+  left: 50%;
+  overflow: auto;
+
+  .blog-post-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     h1 {
+      margin: 30px;
       text-align: center;
     }
-  }
-}
 
-.blog-post-list {
-  h1 {
-    margin: 30px;
-    text-align: center;
-  }
+    .blog-post {
 
-  .blog-post {
-    width: 350px;
-    height: auto;
-    margin: 15px 0;
-    background-color: rgb(128, 128, 128);
+      .blog-post-content {
+        width: 350px;
+        height: auto;
+        margin: 15px 0;
+        background-color: white;
+        border-radius: 2px;
+        padding: 10px;
 
-    .post-comment {
-      background-color: green;
+        .post-name-title {
+          display: flex;
+
+          .post-creator {
+            color: $light-purple;
+            margin-right: 10px;
+            letter-spacing: 1px;
+          }
+
+          .post-title {
+            color: $secondary-color;
+          }
+        }
+      }
+      
+      
+
+      .post-body {
+        color: $p-text;
+        padding: 20px;
+      }
+
+      .post-comment {
+        background-color: $light-purple;
+        color: white;
+        margin-left: 20px;
+        padding: 10px;
+        margin: 2px 0 5px 20px;
+      }
     }
   }
 }
+
+
 

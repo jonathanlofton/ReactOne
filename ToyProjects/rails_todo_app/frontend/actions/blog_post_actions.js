@@ -39,6 +39,5 @@ export const createComment = comment => dispatch => (
 
 export const deletePost = post => dispatch => (
   APIUtil.deletePost(post).then((post) => (
-    dispatch(removePost(post))
-  ), err => dispatch(receiveErrors(err.responseJSON)))
-)
+    dispatch(removePost(post)))
+  ))

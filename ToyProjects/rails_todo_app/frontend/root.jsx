@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/app';
 import configureStore from './store/store';
 import {signup, login} from './util/session_util';
-import { createPost } from './actions/blog_post_actions';
+import { createPost, deletePost } from './actions/blog_post_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.createPost = createPost;
+  window.deletePost = deletePost;
   
   const root = document.getElementById('root');
 

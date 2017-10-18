@@ -3,6 +3,7 @@ import * as APIUtil from '../util/blog_post_util';
 
 export const RECEIVE_BLOG_POST = 'RECEIVE_BLOG_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
+export const REMOVE_POST = 'REMOVE_POST';
 
 export const addBlogPost = post => ({
   type: RECEIVE_BLOG_POST,
@@ -34,4 +35,10 @@ export const createComment = comment => dispatch => (
     dispatch(addCommentToPost(comment))
   ), err => dispatch(receiveErrors(err.responseJSON))
   )
+)
+
+export const deletePost = post => dispatch => (
+  APIUtil.deletePost(post).then((post) => (
+    dispatch(removePost(post))
+  ), err => dispatch(receiveErrors(err.responseJSON)))
 )

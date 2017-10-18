@@ -47,8 +47,9 @@ class LandingPage extends React.Component {
     }
   }
 
-  deletePost() {
-    console.log("GLUCOSE")
+  deletePost(post) {
+    const { deletePost } = this.props;
+    deletePost(post)
   }
   
   render() {
@@ -71,7 +72,7 @@ class LandingPage extends React.Component {
           <p className="post-body">{post.body}</p>
           {/* <input type="text" /> */}
           {/* <input type="text" /> */}
-          <button onClick={() => this.deletePost()}>Delete</button>
+          <button onClick={(post) => this.deletePost(post)}>Delete</button>
           {/* <button>Post Comment</button> */}
         </li>
         <li>

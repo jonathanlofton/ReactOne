@@ -13,6 +13,13 @@ export const fetchPosts = () => (
   })
 )
 
+export const deletePost = post => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/blog_posts/${post.id}`
+  })
+)
+
 export const createComment = comment => (
   $.ajax({
     method: 'POST',

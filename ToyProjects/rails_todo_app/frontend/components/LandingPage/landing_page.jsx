@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogPost from '../BlogPosts/blog_posts';
 
 class LandingPage extends React.Component {
 
@@ -38,15 +39,6 @@ class LandingPage extends React.Component {
     })
   }
 
-  commentForm() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-
   deletePost(post) {
     console.log(post)
     const { deletePost } = this.props;
@@ -61,30 +53,8 @@ class LandingPage extends React.Component {
     }
 
     const { allPosts } = this.props.blogPosts;
-    console.log(allPosts)
     const blogPosts = allPosts.map((post, idx) => (
-      <ul key={idx} className="blog-post">
-        <li className="blog-post-content">
-          <div className="post-name-title">
-            <p className="post-creator">{post.creator}</p>
-            <p className="post-title">{post.title}</p>
-          </div>
-
-          <p className="post-body">{post.body}</p>
-          {/* <input type="text" /> */}
-          {/* <input type="text" /> */}
-          <button onClick={() => this.deletePost(post)}>Delete</button>
-          {/* <button>Post Comment</button> */}
-        </li>
-        <li>
-          {post.comments.map((comment, idx) =>(
-            <p key={idx} className="post-comment">
-              {comment.body}
-            </p>
-          ))}
-        </li>
-      </ul>
-
+      <BlogPost post={post} idx={idx} />
     ))
 
 

@@ -5,7 +5,8 @@ class BlogPost extends React.Component {
     super(props)
 
     this.state = {
-      show: false
+      show: false,
+      body: ''
     }
   }
 
@@ -17,14 +18,36 @@ class BlogPost extends React.Component {
     })
   }
 
+  updateBody(e) {
+    this.setState({
+      body: e.target.value
+    })
+  }
+
+  createComment() {
+    const { post, createComment, currentUser, idx } = this.props;
+    const newPost = {
+      blog_post_id: idx,
+      user_id: currentUser.id,
+      body: this.state.body,
+    }
+
+    createComment({ comment: newPost })
+  }
+
   commentForm() {
     return(
       <div>
-        <input type="text" />
-        <input type="text" />
-        <button>Post Comment</button>
+        <textarea type="text" value={this.state.body} onChange={(e) => this.updateBody(e)}/>
+        <button onClick={() => this.createComment()}>Post Comment</button>
       </div>
     )
+  }
+
+  deletePost(post) {
+    console.log(post)
+    const { deletePost } = this.props;
+    deletePost(post)
   }
 
   render() {
@@ -36,6 +59,7 @@ class BlogPost extends React.Component {
     } else {
       commentForm = null;
     }
+    console.log(this.props)
 
     return(
       <ul key={idx} className="blog-post">
@@ -44,10 +68,11 @@ class BlogPost extends React.Component {
             <p className="post-creator">{post.creator}</p>
             <p className="post-title">{post.title}</p>
           </div>
-          <button onClick={() => this.showContent()}>reply</button>
+          
           <p className="post-body">{post.body}</p>
           <button onClick={() => this.deletePost(post)}>Delete</button>
-          { commentForm }
+          <button onClick={() => this.showContent()}>reply</button>
+          {commentForm}
         </li>
         <li>
           {post.comments.map((comment, idx) => (

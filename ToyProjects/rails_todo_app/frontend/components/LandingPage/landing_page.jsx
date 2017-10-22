@@ -39,22 +39,26 @@ class LandingPage extends React.Component {
     })
   }
 
-  deletePost(post) {
-    console.log(post)
-    const { deletePost } = this.props;
-    deletePost(post)
-  }
+  
   
   render() {
     console.log(this.props)
 
-    if (!this.props.blogPosts.allPosts) {
+    if (!this.props.blogPosts) {
       return null 
     }
-
-    const { allPosts } = this.props.blogPosts;
-    const blogPosts = allPosts.map((post, idx) => (
-      <BlogPost post={post} idx={idx} />
+    console.log(this.props)
+    const { blogPosts } = this.props;
+    const { createComment, deletePost } = this.props;
+    const allPosts = blogPosts.map((post, idx) => (
+      <BlogPost 
+        post={post} 
+        key={idx} 
+        idx={idx} 
+        createComment={createComment}
+        currentUser={this.props.session.currentUser}
+        deletePost={deletePost}
+        />
     ))
 
 
@@ -73,7 +77,7 @@ class LandingPage extends React.Component {
             <li>
               <h1>All Posts</h1>
             </li>
-            {blogPosts}
+            {allPosts}
           </ul>
         </div>
       </div>

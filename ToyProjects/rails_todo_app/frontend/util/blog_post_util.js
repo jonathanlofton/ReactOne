@@ -23,7 +23,7 @@ export const deletePost = post => (
 export const createComment = comment => (
   $.ajax({
     method: 'POST',
-    url: '/blog_posts',
+    url: '/comments',
     data: comment
   })
 )

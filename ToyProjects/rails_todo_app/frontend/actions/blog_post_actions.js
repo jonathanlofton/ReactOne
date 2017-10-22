@@ -4,6 +4,7 @@ import * as APIUtil from '../util/blog_post_util';
 export const RECEIVE_BLOG_POST = 'RECEIVE_BLOG_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
+export const ADD_COMMENT_TO_POST = 'ADD_COMMENT_TO_POST';
 
 export const addBlogPost = post => ({
   type: RECEIVE_BLOG_POST,
@@ -13,6 +14,11 @@ export const addBlogPost = post => ({
 export const receiveAllPosts = allPosts => ({
   type: RECEIVE_ALL_POSTS,
   allPosts
+})
+
+export const addCommentToPost = comment => ({
+  type: ADD_COMMENT_TO_POST,
+  comment,
 })
 
 export const createPost = (post) => dispatch => (

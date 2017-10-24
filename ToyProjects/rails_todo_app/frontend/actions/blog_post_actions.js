@@ -11,6 +11,11 @@ export const addBlogPost = post => ({
   post
 })
 
+export const removePost = post => ({
+  type: REMOVE_POST,
+  post
+})
+
 export const receiveAllPosts = allPosts => ({
   type: RECEIVE_ALL_POSTS,
   allPosts

@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     if @comment.save 
       render 'comments/show'
     else 
-      render json: @comment.error.full_messages, status: 402
+      render json: @comment.errors.full_messages, status: 402
     end 
   end 
 

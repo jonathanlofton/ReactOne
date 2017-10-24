@@ -48,9 +48,9 @@ class LandingPage extends React.Component {
       return null 
     }
     console.log(this.props)
-    const { blogPosts } = this.props;
+    const { allPosts } = this.props.blogPosts;
     const { createComment, deletePost } = this.props;
-    const allPosts = blogPosts.map((post, idx) => (
+    const please = allPosts.map((post, idx) => (
       <BlogPost 
         post={post} 
         key={idx} 
@@ -77,7 +77,7 @@ class LandingPage extends React.Component {
             <li>
               <h1>All Posts</h1>
             </li>
-            {allPosts}
+            {please}
           </ul>
         </div>
       </div>

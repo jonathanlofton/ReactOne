@@ -1,3 +1,3 @@
 
 
-export const blogPostSelector = allPosts => allPosts.map((post, idx) => Object.assign({}, post, {id: idx}))
+export const blogPostSelector = allPosts => allPosts.map((post, idx) => allPosts[post.id] = post)

@@ -8,6 +8,8 @@ const nullState = Object.freeze({
 
 const BlogPostReducer = (state = nullState, action) => {
   Object.freeze(state);
+  console.log(state)
+  console.log(action)
   switch (action.type) {
     case RECEIVE_ALL_POSTS:
       const { allPosts } = action;
@@ -16,6 +18,7 @@ const BlogPostReducer = (state = nullState, action) => {
       );
     case REMOVE_POST:
       const { post } = action;
+      return Object.assign({}, state, { allPosts })
       console.log(state)
     case ADD_COMMENT_TO_POST:
       const { comment } = action;

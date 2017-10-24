@@ -3,9 +3,9 @@ import LandingPage from './landing_page';
 import { createPost, fetchAllPosts, deletePost, createComment } from '../../actions/blog_post_actions';
 import { blogPostSelector } from '../../reducers/selectors';
 
-const mapStateToProps = ({session, blogPosts}) => ({
+const mapStateToProps = ({ session, blogPosts }) => ({
   session,
-  blogPosts: blogPostSelector(blogPosts.allPosts)
+  blogPosts
 })
 
 const mapDispatchToProps = dispatch => ({

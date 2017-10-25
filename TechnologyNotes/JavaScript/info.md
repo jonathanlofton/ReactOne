@@ -1,36 +1,69 @@
-Javascript
+# Javascript
 
-What does mean hoisting?
+## What does hoisting mean ?
+### To move something to the top
 Hoisting means to move something to the top, of a certain place.
 On javascript, all the declarations are being hoisted that means that are going to be moved to the top of the actual scope
 A declaration in javascript is when we define a variable using var, example var x;
 It is important to notice that along with the declaration sometimes we have the initialization, example var x = 10. Whatever happen before the = is declaration whatever happen after the equal is initialization, IMPORTANT initialization is not hoisted.  
-What is the difference between function expression and function declaration?
-A function declaration is going to be hoisted because is a declaration and a function expression is not going to be hoisted, this means that a function declaration is available everywhere and a function expression is only available after is define.
-function declaration 
-function hello(){}
-function expression
-var hello = function(){}
-Main advantages of using prototype?
-It allow simulating inheritance in javascript
-Defining a function on the prototype It has better performance than as an instance method because of no matter the number of instances we create we only have one prototype for all of them.
-Explain the prototype chain?
-The prototype chain is the way javascript simulate inheritance.
-It is important to notice that all object have prototype that is linked to another Object
-Example of the prototype chain whenever we try to access a property of an object, 
-javascript is going to look for that property within that object if that property is not there, 
-JS is going to move to the prototype of that object and verify if that prototype object have that specific property, 
-if not It will move to the prototype of the prototype of the object and look again, and so on util, the prototype object is the Object constructor that is the main object on Js (everything inherits from it).
-What does mean the "this" keyword?
-It is the context or environment where and how the function is being executed.
-The this keyword’s value has nothing to do with the function itself, how the function is called determines the this value
-It can be dynamic, based on how the function is called
-You can change the this context through .call(), .apply() and .bind()
-Is it javascript single thread and how does it handle events?
-Javascript is single threaded language.
-In order to handle asynchronous code or event javascript have an event stack that is going to be filled with all the event that were triggered, while the thread was busy, whenever the thread is free JS is going to be invoking the function that was stored on the event stack before, one by one, until there isn’t any function on the event stack
-Hoes does async code works? (Explain Promises)
-Promises in javascript allow us to handle the asynchronous request in an easier way, pretty much a promise is a function that delays the execution of some code until that function is resolved or reject.
+
+## What is the difference between function expression and function declaration?
+### A function declaration is going to be hoisted because is a declaration and a function expression is not going to be hoisted, this means that a function declaration is available everywhere and a function expression is only available after is define.
+## function declaration 
+### function hello(){}
+## function expression
+### var hello = function(){}
+# Main advantages of using prototype?
+### It allow simulating inheritance in javascript
+### Defining a function on the prototype It has better performance than as an instance method because of no matter the number of instances we create we only have one prototype for all of them.
+# Explain the prototype chain?
+## The prototype chain is the way javascript simulate inheritance.
+## It is important to notice that all object have prototype that is linked to another Object
+## Example of the prototype chain whenever we try to access a property of an object, javascript is going to look for that property within that object if that property is not there, JS is going to move to the prototype of that object and verify if that prototype object have that specific property, if not It will move to the prototype of the prototype of the object and look again, and so on util, the prototype object is the Object constructor that is the main object on Js (everything inherits from it).
+
+# What does mean the "this" keyword?
+## It is the context or environment where and how the function is being executed.
+## The this keyword’s value has nothing to do with the function itself, how the function is called determines the this value
+## It can be dynamic, based on how the function is called
+## You can change the this context through .call(), .apply() and .bind()
+
+# Is it javascript single thread and how does it handle events?
+## Javascript is single threaded language.
+## In order to handle asynchronous code or event javascript have an event stack that is going to be filled with all the event that were triggered, while the thread was busy, whenever the thread is free JS is going to be invoking the function that was stored on the event stack before, one by one, until there isn’t any function on the event stack
+# Hoes does async code works? (Explain Promises)
+## Promises in javascript allow us to handle the asynchronous request in an easier way, pretty much a promise is a function that delays the execution of some code until that function is resolved or reject.
+
+# React
+
+## Explain What does mean the virtual DOM?
+### The virtual DOM is the DOM that React use to render the Html DOM.
+### The main reason for this is that React have a lot more control of the element that going to render that target a very specific tree to be render, the main advantages are that react is going to be able to render just very specific branches of the DOM tree instead of the whole tree, improving the rendering performance.
+### All the events are related to the virtual DOM instead of the HTML DOM, this allows React to have total control of the event that is going to be triggered.
+## What is the difference between props and state?
+### props are the variables that the component is going to receive as attributes on the jsx syntax, prop does not belong to the component, belong to any of its parents.
+### the state is a variable that belongs to the component itself
+### The main difference is that we are not supposed to change the value of the props because if we do, it is not going to be any effect on the page, instead if we modify the state the component is going to render again 
+### state trigger the render, whenever we define it with the this.setState method
+
+## Explain the lifecycle of a component?
+### The lifecycle method is a set of methods that are going to be invoked when something changes on the component, and the render is being triggered
+### shouldComponentUpdate, componentWillMount, componentDidMount, rider, etc.
+## What are the advantages of using redux?
+### On React the variables are only passed from parent to children and not the other way around, (one-way binding). If we would like to change a variable that received as props, we need to use a callback function to change the value on the component that creates it as a state.
+### Redux allow the component to require or change the information that we like, having something more related to two-way binding.
+## Explain How redux works?
+### Redux works with 3 main keywords
+### Actions
+It is an object that is going to be sent as argument on the dispatch function, this object have a property type that is going to be used to tell the store what information we would like to change
+Example: {type:’CHANGE_USER’,payload:’luis’}
+### Store/Reducer
+The reducer receives the actual state of the application and the action that the dispatch send, this function is going to be executed each time a dispatch function is being invoked, depending on the property type that belongs to the action the reducer is going to mutate the state in order to change that specific information.
+### Dispatch
+This is a function that allows us to communicate with the store or reducer, receive an action as argument
+Example dispatch(action);
+## How to handle asynchronous request along with redux?
+### Using redux-thunk or redux-promise, having one action per status of the request, (loading, success, error).
+
 
 
 # another set 

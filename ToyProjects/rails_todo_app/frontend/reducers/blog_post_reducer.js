@@ -11,6 +11,7 @@ const BlogPostReducer = (state = {}, action) => {
       action.allPosts.forEach(todo => nextState[todo.id] = todo);
       return nextState
     case RECEIVE_BLOG_POST:
+      console.log(post)
       const newTodo = {[post.id]: post }
       return Object.assign({}, state, newTodo)
     case REMOVE_POST:

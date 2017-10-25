@@ -47,7 +47,7 @@ class LandingPage extends React.Component {
     }
     const { blogPosts } = this.props;
     const { createComment, deletePost } = this.props;
-
+    console.log(this.props)
     const allPosts = blogPosts.map((post, idx) => (
       <BlogPost 
         post={post} 

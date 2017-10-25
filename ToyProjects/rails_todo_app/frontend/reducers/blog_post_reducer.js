@@ -13,7 +13,8 @@ const BlogPostReducer = (state = {}, action) => {
     case RECEIVE_BLOG_POST:
       console.log(state)
       console.log(action)
-      return merge({}, state, post)
+      const newTodo = {[post.id]: post }
+      return Object.assign({}, state, newTodo)
     case REMOVE_POST:
       console.log(post)
     case ADD_COMMENT_TO_POST:

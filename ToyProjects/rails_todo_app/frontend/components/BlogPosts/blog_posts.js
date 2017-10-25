@@ -58,7 +58,6 @@ class BlogPost extends React.Component {
     } else {
       commentForm = null;
     }
-    console.log(this.props)
 
     return(
       <ul key={idx} className="blog-post">

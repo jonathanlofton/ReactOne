@@ -23,8 +23,10 @@ class LandingPage extends React.Component {
       { blog_post: {
           user_id: currentUser.id,
           title: this.state.title,
-          body: this.state.body
+          body: this.state.body,
+          comments: []
       }})
+    this.setState({title: '', body: ''})
   }
 
   changeTitle(e) {
@@ -47,7 +49,7 @@ class LandingPage extends React.Component {
     }
     const { blogPosts } = this.props;
     const { createComment, deletePost } = this.props;
-    console.log(this.props)
+
     const allPosts = blogPosts.map((post, idx) => (
       <BlogPost 
         post={post} 

@@ -1,32 +1,22 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_ALL_POSTS, REMOVE_POST, ADD_COMMENT_TO_POST } from '../actions/blog_post_actions';
+import { RECEIVE_BLOG_POST, RECEIVE_ALL_POSTS, REMOVE_POST, ADD_COMMENT_TO_POST } from '../actions/blog_post_actions';
 
-const nullState = Object.freeze({
-  allPosts: [],
-});
-
-const BlogPostReducer = (state = nullState, action) => {
+const BlogPostReducer = (state = {}, action) => {
   Object.freeze(state);
-  console.log(state)
-  console.log(action)
+  const { allPosts, post } = action;
   switch (action.type) {
     case RECEIVE_ALL_POSTS:
-      const { allPosts } = action;
-      return Object.assign({}, state,
-        { allPosts }
-      );
+      const nextState = {};
+      action.allPosts.forEach(todo => nextState[todo.id] = todo);
+      return nextState
+    case RECEIVE_BLOG_POST:
+      console.log(state)
+      console.log(action)
+      return merge({}, state, post)
     case REMOVE_POST:
-      const { post } = action;
-      return Object.assign({}, state, { allPosts })
-      console.log(state)
+      console.log(post)
     case ADD_COMMENT_TO_POST:
-      const { comment } = action;
-      console.log(state)
-      let blog_post = state.blogPosts.allPosts[comment.blog_post_id]
-      return Object.assign({}, state,
-        blog_post.comments.push(comment)
-      )
     default:
       return state;
   }

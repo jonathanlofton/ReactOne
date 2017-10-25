@@ -45,9 +45,8 @@ class BlogPost extends React.Component {
   }
 
   deletePost(post) {
-    console.log(post)
     const { deletePost } = this.props;
-    deletePost(post)
+    deletePost(post);
   }
 
   render() {

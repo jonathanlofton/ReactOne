@@ -5,13 +5,13 @@ import { blogPostSelector } from '../../reducers/selectors';
 
 const mapStateToProps = ({ session, blogPosts }) => ({
   session,
-  blogPosts
+  blogPosts: blogPostSelector(blogPosts)
 })
 
 const mapDispatchToProps = dispatch => ({
   createPost: (post) => dispatch(createPost(post)),
   fetchAllPosts: () => dispatch(fetchAllPosts()),
-  deletePost: (post) => dispatch(deletePost(post)),
+  deletePost: (post, idx) => dispatch(deletePost(post, idx)),
   createComment: (comment) => dispatch(createComment(comment)),
 })
 

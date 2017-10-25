@@ -4,5 +4,4 @@ json.array! @blog_posts do |blog_post|
     json.comments blog_post.comments do |comment|
         json.partial! 'comments/comment', comment: comment
     end
-
 end 

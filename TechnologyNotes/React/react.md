@@ -27,3 +27,13 @@
 
 **What are some libraries that you like to use?**
     - 
+
+**What are some reasons why companies are moving towards react?**
+- powerful single page applications that efficiently update
+
+**What are promises?**
+- promises are specifically for asynchronous calls
+- they allow the response whether it be data or an error to be handled after
+ the asynchronous call is finished.
+
+ 

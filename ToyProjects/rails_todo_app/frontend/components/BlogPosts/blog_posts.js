@@ -25,13 +25,15 @@ class BlogPost extends React.Component {
   }
 
   createComment() {
-    const { post, createComment, currentUser, idx } = this.props;
+    const { post, createComment, currentUser } = this.props;
+    console.log(post)
+    console.log(currentUser)
     const newPost = {
-      blog_post_id: idx,
+      blog_post_id: post.id,
       user_id: currentUser.id,
       body: this.state.body,
     }
-
+    console.log(newPost)
     createComment({ comment: newPost })
   }
 

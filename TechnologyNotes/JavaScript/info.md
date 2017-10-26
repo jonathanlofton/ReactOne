@@ -64,6 +64,9 @@ Example dispatch(action);
 ## How to handle asynchronous request along with redux?
 ### Using redux-thunk or redux-promise, having one action per status of the request, (loading, success, error).
 
+# Drawbacks to using private methods in Javascript
+### they are inefficient
+### a new copy of the method would be created for each instance
 
 
 # another set 

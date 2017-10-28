@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from './comments';
 
 class BlogPost extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class BlogPost extends React.Component {
   commentForm() {
     return(
       <div className="comment-form">
-        <textarea type="text" value={this.state.body} onChange={(e) => this.updateBody(e)}/>
+        <textarea type="text" cols="30" rows="5" value={this.state.body} onChange={(e) => this.updateBody(e)}/>
         <button onClick={() => this.newComment()}>Post Comment</button>
       </div>
     )
@@ -51,9 +52,10 @@ class BlogPost extends React.Component {
 
   render() {
     const { post, idx } = this.props;
+    const { show } = this.state;
 
     let commentForm;
-    if (this.state.show) {
+    if (show) {
       commentForm = this.commentForm();
     } else {
       commentForm = null;
@@ -69,14 +71,12 @@ class BlogPost extends React.Component {
           
           <p className="post-body">{post.body}</p>
           <button onClick={() => this.deletePost(post)}>Delete</button>
-          <button onClick={() => this.showContent()}>reply</button>
+          <button onClick={() => this.showContent()}>{ show ? "Close" : "Reply"}</button>
           {commentForm}
         </li>
         <li>
           {post.comments.map((comment, idx) => (
-            <p key={idx} className="post-comment">
-              {comment.body}
-            </p>
+            <Comment comment={comment} key={idx} />
           ))}
         </li>
       </ul>

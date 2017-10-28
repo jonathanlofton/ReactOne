@@ -26,7 +26,7 @@ class BlogPost extends React.Component {
 
   newComment() {
     const { post, createComment, currentUser } = this.props;
-    
+
     const newPost = {
       blog_post_id: post.id,
       user_id: currentUser.id,
@@ -37,7 +37,7 @@ class BlogPost extends React.Component {
 
   commentForm() {
     return(
-      <div>
+      <div className="comment-form">
         <textarea type="text" value={this.state.body} onChange={(e) => this.updateBody(e)}/>
         <button onClick={() => this.newComment()}>Post Comment</button>
       </div>

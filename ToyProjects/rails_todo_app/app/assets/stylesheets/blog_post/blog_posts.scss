@@ -88,6 +88,11 @@
             color: $secondary-color;
           }
         }
+
+        .comment-form {
+          padding: 10px;
+
+        }
       }
       
       
@@ -103,6 +108,7 @@
         margin-left: 20px;
         padding: 10px;
         margin: 2px 0 5px 20px;
+        overflow: hidden;
       }
     }
   }

@@ -19,8 +19,9 @@ const BlogPostReducer = (state = {}, action) => {
       delete newState[post.id];
       return newState;
     case ADD_COMMENT_TO_POST:
+      const { comment } = action;
       let blogPosts = state;
-      blogPosts[74].comments.push(action.comment)
+      blogPosts[comment.blog_post_id].comments.push(comment)
       return Object.assign({}, state, blogPosts)
     default:
       return state;

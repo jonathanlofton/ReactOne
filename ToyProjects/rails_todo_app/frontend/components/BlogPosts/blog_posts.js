@@ -24,24 +24,22 @@ class BlogPost extends React.Component {
     })
   }
 
-  createComment() {
+  newComment() {
     const { post, createComment, currentUser } = this.props;
-    console.log(post)
-    console.log(currentUser)
+    
     const newPost = {
       blog_post_id: post.id,
       user_id: currentUser.id,
       body: this.state.body,
     }
-    console.log(newPost)
-    createComment({ comment: newPost })
+    createComment({comment: newPost})
   }
 
   commentForm() {
     return(
       <div>
         <textarea type="text" value={this.state.body} onChange={(e) => this.updateBody(e)}/>
-        <button onClick={() => this.createComment()}>Post Comment</button>
+        <button onClick={() => this.newComment()}>Post Comment</button>
       </div>
     )
   }

@@ -2,9 +2,12 @@ import React from 'react';
 import Data from './data';
 
 // Functional components
+//  - use if you dont need state or component did mount type things
+//  - makes your code more functional so less mishaps
+
 
 const Item = (props) => {
-  
+
   const { id, name, eyes } = props.item;
 
   return (
@@ -17,7 +20,6 @@ const Item = (props) => {
 }
 
 const List = (props) => {
-  console.log(props)
   const items = Data.map((item, idx) => <Item item={item} key={idx}/>)
   const { counterValue, increment } = props;
   return (

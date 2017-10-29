@@ -1,13 +1,22 @@
 import React from 'react';
 
-const Comment = (props) => {
-  const {comment, idx} = props;
-  console.log(comment);
-  return (
-    <p className="post-comment">
-      {comment.body}
-    </p>
-  )
+class Comment extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      commentForm: false,
+    }
+  }
+
+  render() {
+    const { comment, idx } = this.props;
+    return (
+      <li className="post-comment">
+        <p className="comment-creator">{comment.creator}</p>
+        <p className="comment-body">{comment.body}</p>
+      </li>
+    )
+  }
 }
 
 export default Comment;

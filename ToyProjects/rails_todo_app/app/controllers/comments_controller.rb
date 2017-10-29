@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   def create 
     @comment = Comment.new(comment_params)
-    print @comment
+    
     if @comment.save 
       render 'comments/show'
     else 

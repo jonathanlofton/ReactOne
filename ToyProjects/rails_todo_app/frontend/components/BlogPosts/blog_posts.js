@@ -74,11 +74,11 @@ class BlogPost extends React.Component {
           <button onClick={() => this.showContent()}>{ show ? "Close" : "Reply"}</button>
           {commentForm}
         </li>
-        <li>
+        <ul>
           {post.comments.map((comment, idx) => (
             <Comment comment={comment} key={idx} />
           ))}
-        </li>
+        </ul>
       </ul>
     )
   }

@@ -33,6 +33,7 @@ class BlogPost extends React.Component {
       user_id: currentUser.id,
       body: this.state.body,
     }
+
     createComment({comment: newPost})
   }
 
@@ -51,7 +52,7 @@ class BlogPost extends React.Component {
   }
 
   render() {
-    const { post, idx } = this.props;
+    const { post, idx, createComment, currentUser } = this.props;
     const { show } = this.state;
 
     let commentForm;
@@ -76,7 +77,13 @@ class BlogPost extends React.Component {
         </li>
         <ul>
           {post.comments.map((comment, idx) => (
-            <Comment comment={comment} key={idx} />
+            <Comment 
+              comment={comment} 
+              key={idx} 
+              createComment={createComment} 
+              post={post}
+              user={currentUser}
+              />
           ))}
         </ul>
       </ul>

@@ -32,7 +32,7 @@ class Comment extends React.Component {
   }
 
   commentOnComment() {
-    const { comment, post, createComment, user } = this.props;
+    const { comment, post, createCommentOnComment, user } = this.props;
 
     const newPost = {
       blog_post_id: post.id,
@@ -41,7 +41,7 @@ class Comment extends React.Component {
       comment_id: comment.id,
     }
 
-    createComment({ comment: newPost })
+    createCommentOnComment({ comment: newPost })
   }
 
   render() {

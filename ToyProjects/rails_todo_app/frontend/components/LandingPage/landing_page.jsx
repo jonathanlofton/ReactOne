@@ -48,13 +48,14 @@ class LandingPage extends React.Component {
       return null 
     }
     const { blogPosts } = this.props;
-    const { createComment, deletePost } = this.props;
+    const { createComment, deletePost, createCommentOnComment } = this.props;
 
     const allPosts = blogPosts.map((post, idx) => (
       <BlogPost 
         post={post} 
         key={idx} 
         createComment={createComment}
+        createCommentOnComment={createCommentOnComment}
         currentUser={this.props.session.currentUser}
         deletePost={deletePost}
         />

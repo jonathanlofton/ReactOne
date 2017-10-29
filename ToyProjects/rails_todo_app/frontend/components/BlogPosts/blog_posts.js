@@ -52,7 +52,7 @@ class BlogPost extends React.Component {
   }
 
   render() {
-    const { post, idx, createComment, currentUser } = this.props;
+    const { post, idx, createComment, currentUser, createCommentOnComment } = this.props;
     const { show } = this.state;
 
     let commentForm;
@@ -80,7 +80,7 @@ class BlogPost extends React.Component {
             <Comment 
               comment={comment} 
               key={idx} 
-              createComment={createComment} 
+              createCommentOnComment={createCommentOnComment}
               post={post}
               user={currentUser}
               />

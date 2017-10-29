@@ -1,6 +1,10 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_BLOG_POST, RECEIVE_ALL_POSTS, REMOVE_POST, ADD_COMMENT_TO_POST } from '../actions/blog_post_actions';
+import { RECEIVE_BLOG_POST, 
+         RECEIVE_ALL_POSTS,
+         REMOVE_POST,
+         ADD_COMMENT_TO_POST,
+         ADD_COMMENT_TO_COMMENT } from '../actions/blog_post_actions';
 
 const BlogPostReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -23,6 +27,10 @@ const BlogPostReducer = (state = {}, action) => {
       let blogPosts = state;
       blogPosts[comment.blog_post_id].comments.push(comment)
       return Object.assign({}, state, blogPosts)
+    case ADD_COMMENT_TO_COMMENT:
+      let temp = state[80];
+      temp.comments.push(action.comment)
+      return Object.assign({}, state, {temp})
     default:
       return state;
   }

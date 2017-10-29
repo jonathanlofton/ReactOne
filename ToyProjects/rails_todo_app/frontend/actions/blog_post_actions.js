@@ -5,6 +5,7 @@ export const RECEIVE_BLOG_POST = 'RECEIVE_BLOG_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
 export const ADD_COMMENT_TO_POST = 'ADD_COMMENT_TO_POST';
+export const ADD_COMMENT_TO_COMMENT = 'ADD_COMMENT_TO_COMMENT';
 
 export const addBlogPost = post => ({
   type: RECEIVE_BLOG_POST,
@@ -26,6 +27,11 @@ export const addCommentToPost = comment => ({
   comment,
 })
 
+export const addCommentToComment = comment => ({
+  type: ADD_COMMENT_TO_COMMENT,
+  comment,
+})
+
 export const createPost = (post) => dispatch => (
   APIUtil.createPost(post).then(post => (
       dispatch(addBlogPost(post))),
@@ -44,6 +50,13 @@ export const fetchAllPosts = () => dispatch => (
 export const createComment = comment => dispatch => (
   APIUtil.createComment(comment).then(comment => (
     dispatch(addCommentToPost(comment))
+  ), err => dispatch(receiveErrors(err.responseJSON))
+  )
+)
+
+export const createCommentOnComment = comment => dispatch => (
+  APIUtil.createComment(comment).then(comment => (
+    dispatch(addCommentToComment(comment))
   ), err => dispatch(receiveErrors(err.responseJSON))
   )
 )

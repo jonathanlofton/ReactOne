@@ -2,22 +2,27 @@
 
 
 .sign-up-container {
-  width: 50%;
+  width: 30%;
   height: 50%;
 
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  border-radius: 5px;
 
   .sign-up-form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 30%;
-    height: 30%;
+    width: 50%;
+    height: 40%;
     margin: 20px 0;
-    background-color: white;
   }
+
+  
+
 }

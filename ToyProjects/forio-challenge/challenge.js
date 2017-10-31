@@ -25,7 +25,7 @@
 
 
 // 2nd problem
-// sort the values RGB inline
+// sort the values RGB inline O(n) 
 
 const array = [ 'R', 'G', 'B', 'R', 'R', 'G', 'G', 'B'] 
 // => [R,R,G,G,G,B,B]

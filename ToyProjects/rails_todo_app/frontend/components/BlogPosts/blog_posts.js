@@ -41,7 +41,7 @@ class BlogPost extends React.Component {
     return(
       <div className="comment-form">
         <textarea type="text" cols="30" rows="5" value={this.state.body} onChange={(e) => this.updateBody(e)}/>
-        <button onClick={() => this.newComment()}>Post Comment</button>
+        <button onClick={() => this.newComment()} className="post-comment-button">Post Comment</button>
       </div>
     )
   }
@@ -72,7 +72,7 @@ class BlogPost extends React.Component {
           
           <p className="post-body">{post.body}</p>
           <button onClick={() => this.deletePost(post)}>Delete</button>
-          <button onClick={() => this.showContent()}>{ show ? "Close" : "Reply"}</button>
+          <button onClick={() => this.showContent()} className="reply-button">{ show ? "Close" : "Reply"}</button>
           {commentForm}
         </li>
         <ul>

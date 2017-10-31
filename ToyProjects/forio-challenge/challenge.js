@@ -29,3 +29,26 @@
 
 const array = [ 'R', 'G', 'B', 'R', 'R', 'G', 'G', 'B'] 
 // => [R,R,G,G,G,B,B]
+
+// Solution
+
+const arr = ['R', 'R', 'G', 'G', 'R', 'R', 'B', 'R', 'B', 'B', 'G'];
+
+function sortRBG(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 'G') {
+      let x = arr.splice(i, 1)
+      arr.push(x)
+      i -= 1
+    } else if (arr[i] === 'R') {
+      let y = arr.splice(i, 1)
+      arr.unshift(y)
+      i -= 1
+    }
+  }
+  return arr;
+}
+
+document.body.append(sortRBG(arr));
+
+// R, R, R, R, R, B, B, B, G, G

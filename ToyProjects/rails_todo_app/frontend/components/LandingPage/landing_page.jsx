@@ -6,7 +6,7 @@ class LandingPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: '',
+      title: 'Title',
       body: '',
     }
     this.createPostOnPress = this.createPostOnPress.bind(this);
@@ -67,8 +67,19 @@ class LandingPage extends React.Component {
         <div className="create-post-container">
           <form onSubmit={() => this.createPostOnPress()} className="create-post-form">
             <h1>Create Post</h1>
-            <input type="text" className="title-input" onChange={(e) => this.changeTitle(e)}/>
-            <textarea name="paragraph_text" cols="300" rows="10" onChange={(e) => this.changeBody(e)}></textarea>
+            <input 
+              type="text" 
+              value={this.state.title} 
+              className="title-input" 
+              onChange={(e) => this.changeTitle(e)}
+            />
+            <textarea 
+              name="paragraph_text" 
+              value={this.state.body} 
+              cols="300" 
+              rows="10" 
+              onChange={(e) => this.changeBody(e)}
+              ></textarea>
             <button>Create Post</button>
           </form>
         </div>

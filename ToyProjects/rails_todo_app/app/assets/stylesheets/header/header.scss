@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  .title {
+    color: white;
+    margin-left: 50px;
+    letter-spacing: 3px;
+    font-family: 'Helvetica', cursive;
+  }
+}

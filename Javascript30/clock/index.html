@@ -1,7 +1,11 @@
 <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  </head>
   <body>
     <div class="body">
       <h1>CLOCK BOI</h1>
+      <div class="triangle"></div>
       <div class="clock">
         <div class="arm hour" id="hour"></div>
         <div class="arm minute" id="minute"></div>
@@ -41,7 +45,22 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        font-family: 'Amatic SC', cursive;
+        letter-spacing: 10px;
+        font-weight: 900;
       }
+
+      .triangle {
+        position: absolute;
+        top: 28%;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 103px solid rgba(0, 0, 0, 0);
+        border-bottom: 57px solid red;
+      }
+
 
       .clock {
         width: 200px;

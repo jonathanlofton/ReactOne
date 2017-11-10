@@ -3,6 +3,7 @@
 # Models 
   - responsible for Business Logic, associations, validations and other things
   - concerned with retrieval of information from storage, as well as any logic done to that information.
+  - communicates with the database
 
 # Controller 
   - responsible for handling HTTP requests and providing an appropiate response

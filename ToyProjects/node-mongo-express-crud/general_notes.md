@@ -8,3 +8,7 @@
 
 **Nodemon:**  an npm package that makes you not have to restart your server everytime you edit your server file
 
+**middleware** things like body-parser and other middleware packages used in express are usually doing something to your request or response before they get handled by the application
+
+**body-parser:** will use a urlencoded method that tells body-parser to extract data from the form element and add them to the body property in the request object.
+

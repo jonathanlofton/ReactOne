@@ -18,10 +18,20 @@ MongoClient.connect('mongodb://jlofton:12345@ds163705.mlab.com:63705/mongo-test-
 
 
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html')
+  let cursor = db.collection('quotes').find().toArray((err, results) => {
+    console.log(results)
+  })
+})
 
 app.post('/quotes', (req, res) => {
-  console.log(req.body)
+  db.collection('quotes').save(req.body, (err, result) => {
+    if (err) return console.log(err)
+
+    console.log('saved to database')
+    res.redirect('/')
+  })
 })
 
 

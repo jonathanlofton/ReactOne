@@ -5,6 +5,8 @@ const MongoClient = require('mongodb').MongoClient
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.set('view engine', 'ejs')
+
 let db;
 
 MongoClient.connect('mongodb://jlofton:12345@ds163705.mlab.com:63705/mongo-test-1', (err, database) => {
@@ -19,9 +21,13 @@ MongoClient.connect('mongodb://jlofton:12345@ds163705.mlab.com:63705/mongo-test-
 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
-  let cursor = db.collection('quotes').find().toArray((err, results) => {
-    console.log(results)
+  // res.sendFile(__dirname + 'views/index.ejs')
+  let cursor = db.collection('quotes').find().toArray((err, result) => {
+
+    // first argument is the name of the file we're rendering
+    // it must be placed within a views folder
+    // the second argument is an object that passes data into the view
+    res.render('index.ejs', {quotes: result})
   })
 })
 

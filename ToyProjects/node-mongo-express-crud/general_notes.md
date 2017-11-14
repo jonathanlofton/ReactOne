@@ -12,3 +12,4 @@
 
 **body-parser:** will use a urlencoded method that tells body-parser to extract data from the form element and add them to the body property in the request object.
 
+**collection:** is a named location to store things in mongoDB

@@ -5,10 +5,12 @@ const MongoClient = require('mongodb').MongoClient
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+
 app.set('view engine', 'ejs')
 
 let db;
 
+// accesses your database setup through your provider, and sets up the database so you can fetch from it
 MongoClient.connect('mongodb://jlofton:12345@ds163705.mlab.com:63705/mongo-test-1', (err, database) => {
   if (err) return console.log(err)
   db = database
@@ -38,6 +40,15 @@ app.post('/quotes', (req, res) => {
     console.log('saved to database')
     res.redirect('/')
   })
+})
+
+app.delete('/quotes', (req, res) => {
+  db.collection('quotes').findOneAndDelete({name: req.body.name},
+    (err, result) => {
+      if (err) return res.send(500, err)
+      res.send({message: 'successful deletion'})
+    }
+  )
 })
 
 

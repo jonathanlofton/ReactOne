@@ -1,5 +1,19 @@
 
-
+<head>
+  <script>
+    // check on this later
+    const delete_item = (id) => {
+      fetch('quotes', {
+          method: 'delete',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+          })
+        })
+    }
+  </script>
+</head>
 <body>
   <ul class="quotes">
     <% for(var i=0; i<quotes.length; i++) {%>
@@ -10,7 +24,7 @@
         <span>
           <%= quotes[i].quote %>
         </span>
-        <button id="delete"></button>
+        <button onclick="delete_item('<%= quotes[i]._id %>')"></button>
       </li>
       <% } %>
   </ul>

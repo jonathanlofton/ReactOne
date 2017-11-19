@@ -8,6 +8,8 @@
 
 **Object-Destructuring**:
     makes it possible to extract parts of an object and assign those parts to different variables. (This is a ES6 construct)
+    
+    useful when you dont want to have redundant chains
 
 **Babel**
     Translates any of our code whether it is ES6, JSX and the such into ES5. Which will make it more compatible with browsers and node.
